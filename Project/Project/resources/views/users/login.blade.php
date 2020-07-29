@@ -1,4 +1,5 @@
 @extends('layout.login')
+//tại sao lại layout.login??
 
 
 
@@ -7,6 +8,7 @@
   
         <div class="col-xs-4 col-md-4 mx-auto">
             <form action="{{route('users.login')}}" method="post" enctype="multipart/form-data">
+            //phần login sao lại có enctype??
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="text-danger mt-3 ">
                 @if($errors->any())
