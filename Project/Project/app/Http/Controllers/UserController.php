@@ -5,6 +5,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests;
+//thêm thư viện Hash vào
 
 
 
@@ -82,9 +83,12 @@ class UserController extends Controller
         $user->email=$request->email;
         $user->nickname=$request->nickname;
         $user->password=$request->password;
+        //chưa mã hóa mật khẩu
         
         $user->save();
         return redirect()->back()->with('thongbao','them thanh cong');
+        //thay đổi lại nội dung thông báo cho phù hợp vd: tạo tài khoản thành công!
+        //sau đó mời người dùng đăng nhập ngay!
     }
 
     /**
@@ -146,7 +150,7 @@ class UserController extends Controller
             'email.required'=>'ban chua nhap email',
             'password.required'=>'ban chua nhap password',
             'password.min'=>'password khong duoc nho hon 3',
-            'password.max'=>'password khong duoc lon hon 32',
+            'password.max'=>'password khong duoc lon hon 32',//thừa dấu ','
         ]);
         // $arr= [
         //     'email'=>$request->email,
@@ -156,12 +160,15 @@ class UserController extends Controller
             'email'=>$request->email,
             'password'=>$request->password
             ]))
+            //chưa khai báo thư viện Auth
         {
             return redirect('users.index')->with('thongbao','dang nhap thanh cong');
+            //chuyển qua trang chủ thì không cần hiển thị thông báo 
         }
         else
         {
             return redirect()->back()->with('thongbao','sai tk hoac mk');
+            //thông báo phải là: địa chỉ email hoặc mật khẩu không chính xác
         }
     }
 }
