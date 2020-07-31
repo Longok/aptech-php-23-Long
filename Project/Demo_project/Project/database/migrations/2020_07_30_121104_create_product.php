@@ -19,6 +19,8 @@ class CreateProduct extends Migration
             $table->string('product_price');
             $table->string('product_image');
             $table->timestamps();
+            //chưa chuẩn hóa dữ liệu! đặt tên k đúng ngữ nghĩa
+            //thiếu table..
         });
     }
 
