@@ -20,6 +20,7 @@ class CreateProductType extends Migration
             $table->timestamps();
             $table->foreign('product_id')->references('id')->on('product');
         });
+        //không hiểu vấn đề, phân tích lại
     }
 
     /**
