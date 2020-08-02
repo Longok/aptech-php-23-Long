@@ -16,10 +16,12 @@ class CreateProduct extends Migration
         Schema::create('product', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('product_name')->unique();
-            $table->string('product_price');
-            $table->integer('product_unit');
+            $table->string('product_price');// dùng kiểu float
+            $table->integer('product_unit'); // dùng kiểu float
             $table->text('product_desc');
             $table->string('product_image');
+            // thêm table số lượng sản phẩm! tình trạng sản phẩm: cũ hay mới
+            // thêm khóa ngoại liên kết với bảng loại sản phẩm
 
             $table->timestamps();
         });
