@@ -14,14 +14,14 @@ use App\Http\Requests;
 
 class ProductController extends Controller
 {   
-  public function add_product()
+  public function add_product()// nên đặt tên là: create
   {
      $add_product=DB::table('product')->get(); 
      return view('products.add_product');
   }
   
 
-  public function all_product()
+  public function all_product() //index
   {
       $products = DB::table('product')->get();
 
@@ -30,7 +30,7 @@ class ProductController extends Controller
       ]);
   }
 
-  public function save_product(Request $request)
+  public function save_product(Request $request) //store
   {
         $data =array();
         $data['product_name']= $request->product_name;
@@ -63,17 +63,20 @@ class ProductController extends Controller
      return view('users.address');
    }
 
-   public function tinhthanh()
+   public function tinhthanh() //getCity
    {
      $thanhpho = DB::table('devvn_tinhthanhpho')->get();
      $quanhuyen = DB::table('devvn_quanhuyen')->get();
      $xaphuong = DB::table('devvn_xaphuongthitran')->get();
-
+       //không in dữ liệu kiểu này!
+       //nên tạo ra một table mới lưu địa chỉ từng user một!
      return view('users.address',[
        'thanhpho'=>$thanhpho,
        'quanhuyen'=>$quanhuyen,
        'xaphuong'=>$xaphuong
      ]);
+       //nên dùng compact 
+       //vd: return view('users.address',compact('thanhpho','quanhuyen','xaphuong');
    }
   //  public function gettinhthanh($idmatp)
   //  {
