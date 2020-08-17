@@ -57,17 +57,22 @@
                                 <label for="">Mô tả bài viết</label>
                                 <input type="text"class="form-control" placeholder="Mô tả bài viết" name="description"> 
                             </div>
+                            // tích hợp ckeditor để thêm content
                             <div class="div">
                                 <label for="">Nội dung bài viết</label>
                                 <textarea  class="form-control" placeholder="Nội dung bài viết" name="content"></textarea> 
                             </div>
+                            
                             <div class="div">
                                 <select class="form-control mt-3" name="theloai_id">
-                                
                                     <option value="0">Chọn danh mục</option>
                                     <!-- <input type="text" class="form-control" name="theloai_id"> -->
+                                    // dùng một vòng lặp foreach
+                                    
                                     @foreach($theloai as $tl)
-                                        @if($tl->theloai_id ==0)
+                                        @if($tl->theloai_id ==0)//?
+                                        //theloai_id lấy ở đâu ra?
+                                        
                                             <option value="{{$tl->id}}">{{$tl->name}}</option>
                                             @foreach($theloai as $tloai )
                                                 @if($tloai->theloai_id |=0 && $tloai->theloai_id ==$tl->id)
@@ -77,6 +82,7 @@
                                             @endforeach
                                         @endif       
                                     @endforeach
+                                    
                                 </select>    
                             </div>
                             <div class="div">  
