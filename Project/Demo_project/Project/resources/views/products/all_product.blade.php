@@ -1,23 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danh sách sản phẩm</title>
-    <link rel="stylesheet" href="{{asset('/bootstrap.css')}}">
-  </head>
-  <body>
+@extends('layout.master')
+@include('layout.header')
         <div class="div mt-5">
-            <a href="{{route('users.index')}}">Trang chủ</a> 
+           
               @if(Session::has('thongbao'))
               <div class="row">
               {{Session::get('thongbao')}}
               </div>
               @endif
         </div>
-      <div class="div">
-      Liệt kê sản phẩm
-      </div>
+        <div class="div mt-3 text-primary">
+          Liệt kê sản phẩm   
+        </div>
       <?php
         $message = Session::get('thongbao');
         if($message){
@@ -25,7 +18,7 @@
           session::put('thongbao',null);
           }  
       ?>
-      <table class="table table-hover table-bordered mt-5">
+      <table class="table  table-bordered mt-5 text-primary">
             <thead>
               <tr class="text-center">
                 <th scope="col" class="">#</th>
@@ -60,7 +53,6 @@
         <br><br>
         
           <span>{{ $products->render() }}</span>
- 
-  </body>  
+
 
        

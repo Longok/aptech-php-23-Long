@@ -1,20 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danh mục sản phẩm</title>
-    <link rel="stylesheet" href="{{asset('/bootstrap.css')}}">
-    </head>
-    <body>
-        <div class="div mt-5">
-            <a href="{{route('users.index')}}">Trang chủ</a> 
-        </div>
+@extends('layout.master')
+@include('layout.header')
+
         <div class="div mt-3 text-primary">
             Liệt kê danh mục sản phẩm
             
         </div>
-        <table class="table table-hover table-bordered mt-5">
+        <table class="table table-hover table-bordered mt-5 text-primary">
             <thead>
                 <tr class="text-center">
                     <th scope="col-4" class="">#</th>
@@ -37,8 +28,7 @@
             </tbody>
                 
         </table> 
-    </body>
-</html>
+ 
 
 
        

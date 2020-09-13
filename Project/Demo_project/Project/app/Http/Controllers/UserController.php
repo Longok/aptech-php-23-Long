@@ -103,10 +103,7 @@ class UserController extends Controller
             'password.min'=>'Password không được nhỏ hơn 3',
             'password.max'=>'Password không được lớn hơn 32'
         ]);
-        // $arr= [
-        //     'email'=>$request->email,
-        //     'password'=>$request->password
-        // ];
+        
         if(Auth::Attempt([
             'email'=>$request->email,
             'password'=>$request->password

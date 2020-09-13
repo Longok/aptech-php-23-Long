@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cập nhật sản phẩm</title>
-    <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
-    <link rel="stylesheet" href="{{asset('/bootstrap.css')}}">
-    
-</head>
-<body>
+@extends('layout.master')
+@include('layout.header')
+
 <div class="container"> 
 @if(Session::has('thongbao'))
 <div class="row">
@@ -18,7 +10,7 @@
     <div class="row">
         <div class="col-lg-12">
             <section class="panel mt-3">
-                <a href="{{route('users.index')}}">Trang chủ</a>
+               
                 <header class="col-md-6 mx-auto text-primary">Cập nhật sản phẩm</header>
                 
                 <div class="col-md-6 mx-auto">
@@ -70,8 +62,6 @@
         </div>
     </div>
 </div> 
-</body>
-</html>
 
 
     

@@ -1,17 +1,12 @@
 @extends('layout.master')
 @section('content')
-
+@include('layout.header')
 <div class="row">
     <div class="col-lg-12">
         <section class="panel mt-3">
-       <a href="{{route('users.index')}}">Trang chủ</a>
-
             <header class="col-xs-4 col-md-4 mx-auto text-primary">
-            
-            Thêm danh mục sản phẩm
-            
-            </header>
-            
+             Thêm danh mục sản phẩm
+            </header> 
             <?php
               $message = Session::get('thongbao');
               if($message){

@@ -1,5 +1,6 @@
 @extends('layout.master')
 @section('content')
+@include('layout.header')
 
 <div class="container-fluid mt-2">
     <div class="row">
@@ -63,5 +64,5 @@
     <br>
     <span>{{ $products->render() }}</span>
 </div>
-
+@include('layout.footer')
 @endsection

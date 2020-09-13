@@ -1,26 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thêm danh mục thể loại</title>
-    <link rel="stylesheet" href="{{asset('/bootstrap.css')}}">
-</head>
-<body>
-    
-</body>
-</html>
+@extends('layout.master')
+@include('layout.header')
 
 <div class="row">
     <div class="col-lg-12">
         <section class="panel mt-3">
-            <a href="{{route('users.index')}}">Trang chủ</a>
-
-            <header class="col-xs-4 col-md-4 mx-auto text-primary">
-            
+            <header class="col-xs-4 col-md-4 mx-auto text-primary">  
             Thêm thể loại
             </header>
-            
                 <div class="col-xs-4 col-md-4 mx-auto">
                     <form action="{{URL::to('add-tloai')}}" method="post">
                     {{csrf_field()}}

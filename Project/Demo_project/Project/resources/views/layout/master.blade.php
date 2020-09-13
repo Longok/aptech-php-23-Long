@@ -23,12 +23,12 @@
  
 <body>
 
-  @include('layout.header')
+  <!-- @include('layout.header') -->
  
   
   @section('content') @show
   <br>
-  @include('layout.footer')
+  <!-- @include('layout.footer') -->
   @yield('script')
 
 
