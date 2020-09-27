@@ -11,7 +11,7 @@
 |
 */
 //Trang chủ
-Route::get('trangchu','UserController@index')->name('users.index');
+Route::get('trang-chu','UserController@index')->name('users.index');
 
 //login
 Route::get('/login','UserController@getlogin')->name('users.login');
