@@ -30,6 +30,7 @@
             <tr class="text-center">
                 <th scope="col" class="">#</th>
                 <th scope="col" class="">NickName</th>
+                <th scope="col" class="">Roles</th>
                 <th scope="col" class="">Action</th>
             </tr>
             </thead>
@@ -38,7 +39,7 @@
             <tr>
                 <td scope="row">{{$user->id}}</td>
                 <td>{{$user->nickname}}</td>
-                
+                <td>{{$user->roles}}</td>
                 <td>
                 <form action="{{route('users.destroy',$user->id)}}" method="post">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
@@ -46,9 +47,13 @@
                     <button>Xoa</button>
                 </form>
                 </td>
-            
             </tr>
             @endforeach
+              
             </tbody>
+             
     </table> 
+    * <a href="">Roles = 1 =>"Admin"</a>  <br>
+    * <a href="">Roles = 0 =>"Người dùng"</a>
+     
 </body>          

@@ -47,7 +47,8 @@ class UserController extends Controller
         [
         'email'=>'required|email|unique:users,email',
         'password'=>'required|min:6|max:20',
-        're_password'=>'required|same:password'
+        're_password'=>'required|same:password',
+        'roles'=>'required|same:roles'
         ],
         [
            'email.required'=>'Chưa nhập Email',
@@ -57,6 +58,7 @@ class UserController extends Controller
            'password.min'=>'Độ dài từ 6 đến 20 ký tự',
            're_password.required'=>'Nhập lại mật khẩu không chính xác',
            're_password.same'=>'Mật khẩu không giống nhau', 
+           'roles.required'=>'Chưa nhập roles',
         ]);
         
         $user = new User();
@@ -65,7 +67,7 @@ class UserController extends Controller
         $user->email=$request->email;
         $user->nickname=$request->nickname;
         $user->password=Hash::make($request->password);
-        
+        $user->roles=$request->roles;
         $user->save();
         return redirect()->back()->with('thongbao','Tạo tài khoản thành công');
     }
@@ -74,7 +76,7 @@ class UserController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect('/trangchu'); 
+        return redirect('/trang-chu'); 
     }
 
 
@@ -116,7 +118,5 @@ class UserController extends Controller
             return redirect()->back()->with('thongbao','Địa chỉ Email hoặc mật khẩu không đúng');
         }
     }
-
-
-    
+ 
 }

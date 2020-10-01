@@ -13,26 +13,26 @@
 
 @if(count($errors)>0)
 
-  @foreach($errors->all() as $err)
+@foreach($errors->all() as $err)
   <div class="alert-danger alert">
   {{$err}}
   </div>
-  @endforeach 
+@endforeach 
 @endif
 @if(Session::has('thongbao'))
 <div class="row">
-{{Session::get('thongbao')}}
-</div>
-
-@endif   
+  {{Session::get('thongbao')}}
+</div> 
+@endif 
 <div class="container mt-3">
   <div class="div">
     <a href="{{route('users.index')}}">Quay lại trang chủ</a> 
   </div>
   <header class="col-xs-4 col-md-4 mx-auto text-primary">       
-    Đăng ký tài khoản         
+    Đăng ký tài khoản          
   </header>
-  <div class="d-flex flex-row">
+ 
+ <div class="d-flex flex-row">
     <div class="col-12 px-0">
       <form action="{{route('users.store')}}" method="post" enctype="multipart/form-data" >
         <input type="hidden" name="_token" value="{{csrf_token()}}">
@@ -56,10 +56,10 @@
           <label class="text-uppercase font-weight-bold" for="re_password">Repassword</label>
           <input type="password" class="form-control rounded-0" id="re_password" placeholder="Repassword" name="re_password">
         </div>
-        <!-- <div class="form-group ">
-          <label class="text-uppercase font-weight-bold" for="name">Anhdaidien</label>
-          <input type="file" class="form-control rounded-0" id="name" placeholder="Anhdaidien" name="Anhdaidien">
-        </div> -->
+        <div class="form-group ">
+          <label class="text-uppercase font-weight-bold" for="roles">Roles</label>
+          <input type="roles" class="form-control rounded-0" id="roles" placeholder="Roles" name="roles">
+        </div>
         <div class="form-group">
           <button type="submit" class="btn btn-danger text-uppercase rounded-0 font-weight-bold">
            Đăng ký

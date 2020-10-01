@@ -13,6 +13,8 @@
 <body>
 <div class="container"> 
 
+    <a href="{{route('users.index')}}">Quay lại trang chủ</a> 
+    
     <div class="row mt-4 text-primary">
  
         <div class="col-lg-6 mx-auto">

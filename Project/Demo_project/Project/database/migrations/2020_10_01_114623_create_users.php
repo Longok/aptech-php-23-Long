@@ -19,6 +19,7 @@ class CreateUsers extends Migration
             $table->string('nickname');
             $table->string('email')->unique();
             $table->string('password');
+            $table->text('roles');
             $table->timestamps();
             $table->dateTime('deleted_at')->nullable();
         });

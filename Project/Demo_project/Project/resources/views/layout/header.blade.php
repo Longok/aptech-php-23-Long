@@ -22,7 +22,7 @@
           <a href =""><i class="fas fa-user" style="font-size:30px;color:blue;"></i></a>
           @if(Auth::check())
             
-            {{"Xin chào"}}
+            {{"Xin chào"}} {{Auth::user()->name}}
            
             <a href ="{{URL::to('/logout')}}">Đăng Xuất</a> 
           @else
