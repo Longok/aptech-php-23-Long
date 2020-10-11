@@ -13,6 +13,9 @@
 //Trang chủ
 Route::get('trang-chu','UserController@index')->name('users.index');
 
+//Admin
+Route::get('admin','AdminController@index');
+
 //login
 Route::get('/login','UserController@getlogin')->name('users.login');
 Route::post('/login','UserController@postlogin')->name('users.login');
